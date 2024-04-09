@@ -8,11 +8,13 @@ for (let btn of infoBtns) {
 
         // Hide all hints
         for (let hint of infoHints) {
-            hint.classList.add('none')
+            if (this.parentNode.querySelector('.info-hint') !== hint) {
+            hint.classList.add('none');
+        }
         }
 
         // Show current hint
-        this.parentNode.querySelector('.info-hint').classList.toggle('none')
+        this.parentNode.querySelector('.info-hint').classList.toggle('none');
     });
 }
 
@@ -21,7 +23,7 @@ for (let btn of infoBtns) {
 // Закрываем подсказки по клику по документу (по всей странице)
 document.addEventListener('click', function () {
     for (let hint of infoHints) {
-        hint.classList.add('none')
+        hint.classList.add('none');
     }
 })
 
