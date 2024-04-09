@@ -1,0 +1,235 @@
+.header {
+    position: relative;
+    padding-top: 40px;
+
+    background-color: var(--footer-bg);
+    background-image: url(./../img/header/header-bg.jpg);
+    background-size: cover;
+    aspect-ratio: 1440 / 1084;
+    // max-width: 1440px;
+    // margin: 0 auto;
+
+    color: var(--header-text-color);
+
+    @include retina-bg(url(./../img/header/header-bg@2x.jpg));
+
+    a {
+        color: var(--header-text-color);
+    }
+
+    @include mobile () {
+        padding-top: 20px;
+        padding-bottom: 240px;
+        background-position: center;
+        aspect-ratio: unset;
+     }
+
+}
+.header__nav {
+    margin-bottom: clamp(20px, 0.071rem + 5.89vw, 86px);
+}
+
+.nav {
+    display: grid;
+    grid-template-columns: 2fr 8fr 2fr;
+    gap: 20px;
+
+}
+
+.nav__logo {
+    align-self: center;
+   
+}
+.nav-list {
+    align-self: center;
+    justify-self: center;
+    font-weight: 500;
+    font-size: 18px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 65px;
+
+    @include tablet() {
+        display: none;
+    }
+}
+
+.nav-list__item {
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.nav-list__link {
+    transition: opacity 0.2s ease-in;
+    &:hover {
+        opacity: 0.7;
+    }
+
+    &--dropdown {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        &::after {
+            content: url(./../img/icons/arrow-down.svg);
+            height: 18px;
+        }
+    }  
+}
+
+
+.nav-list__sub-nav {
+    opacity: 0;
+    pointer-events: none;
+    width: 150px;
+    position: absolute;
+    left: 0;
+    top: 100%;
+
+    transform: translate(0%, 10%);
+
+    transition: all 0.2s ease-in;
+}
+
+.nav-list__item:hover .nav-list__sub-nav {
+    pointer-events: all;
+    opacity: 1;
+    transform: translate(0%, 0%);
+}
+
+.nav__btn {
+    display: none;
+
+    @include tablet() {
+        display: block;
+    }
+}
+
+.cart {
+    align-self: center;
+    justify-self: end;
+    position: relative;
+}
+
+.cart__count {
+    position: absolute;
+    top: 3px;
+    right: -6px;
+    
+    display: inline-block;
+    padding: 0 6px;
+    background-color: var(--ui-orange);
+    border-radius: 40px;
+    height: 25px;
+    line-height: 25px;
+    font-weight: 700;
+    font-family: var(--font-cards);
+}
+
+.header__content {
+    text-align: center;
+}
+.header__title {
+    margin-bottom: 14px;
+    text-wrap: balance;
+    font-weight: 700;
+    font-size: clamp(28px, 0.821rem + 4.64vw, 80px);
+    line-height: 130%;
+    letter-spacing: -0.01em;
+    text-transform: capitalize;
+}
+
+.header__content p {
+    max-width: 606px;
+    margin: 0 auto;
+    font-size: clamp(16px, 0.857rem + 0.71vw, 24px);
+    // text-wrap: balance;
+    line-height: 160%;
+
+    opacity: 0.8;
+}
+
+.header__search {
+  margin: 45px auto 0;
+  display: inline-block;
+
+  @include mobile-xl () {
+    display: none;
+}
+}
+
+.search-form {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    
+    border: 0.86px solid rgba(255, 255, 255, 0.6);
+    border-radius: 42px;
+    padding: 8px 8px 8px 20px;
+    max-width: 344px;
+    height: 56px;
+    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.15);
+
+
+}
+
+.search-form__input {
+    flex-grow: 1;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    color: #fff;
+    
+
+    &::placeholder {
+        color: #fff;
+        font-weight: 400;
+        opacity: 0.8;
+    }
+}
+.search-form__btn {
+    flex-shrink: 0;
+    border-radius: 24px;
+    padding: 11px;
+    width: 40px;
+    height: 40px;
+    background: var(--ui-orange)
+}
+
+
+// Dots
+
+.header__dot {
+    position: absolute;
+
+    @include mobile-xl () {
+        display: none;
+    }
+}
+
+.header__dot-sofa {
+    left: calc(296 * 100% / 1440);
+    top: calc(685 * 100% / 1084);
+    transform: translate(0%, 0%);
+}
+
+.header__dot-vase {
+    left: calc(114 * 100% / 1440);
+    top: calc(754 * 100% / 1084);
+    transform: translate(-50%, -50%);
+}
+
+.header__dot-item {
+    left: calc(810 * 100% / 1440);
+    top: calc(787 * 100% / 1084);
+    transform: translate(-50%, -50%);
+}
+
+.header__dot-wall {
+    right: calc(46 * 100% / 1440);
+    top: calc(821 * 100% / 1084);
+}
