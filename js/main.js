@@ -37,8 +37,8 @@ for (let hint of infoHints) {
 // Swiper slider
 
 const swiper = new Swiper('.swiper', {
-    loop: true,
-    freeMode: true,
+    //loop: true,
+    //freeMode: true,
 
     slidesPerView: 1,
     spaceBetween: 42,
