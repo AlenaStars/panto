@@ -512,7 +512,7 @@ html, body {
 }
 
 .info-hint__radio:checked + .info-hint__radio-fake {
-  background-image: url(./../../img/icons/check-no-shadow.svg);
+  background-image: url(./../img/icons/check-no-shadow.svg);
   background-repeat: no-repeat;
   background-position: center center;
 }
